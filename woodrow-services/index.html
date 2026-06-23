@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Concept mockup: noindex so this labeled demo never ranks as the real woodrowservices.com -->
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- ===== SEO (fixes the empty title, adds image + schema) ===== -->
+  <title>HVAC &amp; Plumbing in Wilmington, DE | Heating, Cooling &amp; Repairs | Woodrow Services</title>
+  <meta name="description" content="Third-generation HVAC &amp; plumbing in Wilmington, DE. Heating, cooling, and plumbing repair, install &amp; replacement across New Castle County — free estimates, financing, and we answer after hours. Call (302) 384-8639." />
+  <link rel="canonical" href="https://www.woodrowservices.com/" />
+  <meta name="theme-color" content="#0e1c4a" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Woodrow Services" />
+  <meta property="og:title" content="Woodrow Services — Wilmington's 3rd-Generation HVAC &amp; Plumbing" />
+  <meta property="og:description" content="Heating, cooling &amp; plumbing across New Castle County. Free estimates, financing, after-hours service. Call (302) 384-8639." />
+  <meta property="og:image" content="assets/logo.png" />
+  <meta property="og:url" content="https://www.woodrowservices.com/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Woodrow Services — Wilmington's 3rd-Generation HVAC &amp; Plumbing" />
+  <meta name="twitter:description" content="Heating, cooling &amp; plumbing across New Castle County. Free estimates, financing, after-hours service." />
+  <meta name="twitter:image" content="assets/logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- ===== Structured data (adds HVACBusiness type, services, reviews, FAQ — all missing today) ===== -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org","@type":"HVACBusiness","name":"Woodrow Services",
+    "image":"assets/logo.png","url":"https://www.woodrowservices.com/","telephone":"+1-302-384-8639",
+    "email":"customerservice@woodrowservices.com","priceRange":"$$",
+    "address":{"@type":"PostalAddress","streetAddress":"1624 Newport Gap Pike, Bldg 2","addressLocality":"Wilmington","addressRegion":"DE","postalCode":"19808","addressCountry":"US"},
+    "areaServed":{"@type":"AdministrativeArea","name":"New Castle County, DE"},
+    "openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"00:00","closes":"23:59"},
+    "makesOffer":[
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Heating repair, installation & replacement"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Air conditioning repair, service & replacement"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Plumbing repair & water heater replacement"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Indoor air quality"}}
+    ],
+    "review":[
+      {"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5"},"author":{"@type":"Person","name":"A. R., Newark"},"reviewBody":"Came out same day and fixed our AC during a heat wave."},
+      {"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"5"},"author":{"@type":"Person","name":"M. K., Wilmington"},"reviewBody":"Honest, fair, and they answered the phone at night when our heat went out."}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Do you offer after-hours or emergency service?","acceptedAnswer":{"@type":"Answer","text":"Yes — if your heat or AC is out, request service any time and we'll get back to you fast, even after hours."}},
+    {"@type":"Question","name":"Do you give free estimates?","acceptedAnswer":{"@type":"Answer","text":"Yes, estimates are free, and financing is available on new systems."}},
+    {"@type":"Question","name":"What areas do you serve?","acceptedAnswer":{"@type":"Answer","text":"We serve Wilmington and all of New Castle County, Delaware."}}
+  ]}
+  </script>
+
+  <style>
+  :root{
+    --navy:#15296e; --navy-dk:#0c1838; --blue:#2a72c0; --orange:#f47b20; --orange-dk:#db6410;
+    --ink:#172033; --ink-soft:#46506a; --faint:#7a8398; --paper:#f5f8fc; --paper-2:#eaf0f8;
+    --line:rgba(23,32,51,.12); --white:#fff;
+    --disp:"Archivo",system-ui,sans-serif; --body:"Public Sans",system-ui,sans-serif;
+    --wrap:1180px; --ease:cubic-bezier(.2,.65,.2,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:120px}
+  body{font-family:var(--body);color:var(--ink);background:var(--paper);font-size:clamp(1rem,.4vw+.95rem,1.07rem);line-height:1.6}
+  img{display:block;max-width:100%} a{color:inherit;text-decoration:none} ul{list-style:none}
+  .wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:clamp(1.1rem,4vw,2.4rem)}
+  h1,h2,h3{font-family:var(--disp);font-weight:800;line-height:1.05;letter-spacing:-.02em}
+  .btn{display:inline-flex;align-items:center;gap:.5em;font-family:var(--disp);font-weight:700;font-size:.95rem;padding:.85em 1.5em;border-radius:10px;cursor:pointer;border:none;transition:transform .2s var(--ease),background .2s,box-shadow .2s}
+  .btn-orange{background:var(--orange);color:#fff;box-shadow:0 10px 22px -10px rgba(244,123,32,.7)}
+  .btn-orange:hover{background:var(--orange-dk);transform:translateY(-2px)}
+  .btn-navy{background:var(--navy);color:#fff}.btn-navy:hover{background:var(--navy-dk);transform:translateY(-2px)}
+  .btn-ghost{background:transparent;border:2px solid currentColor}.btn-ghost:hover{transform:translateY(-2px)}
+  .eyebrow{font-family:var(--disp);font-weight:700;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--orange)}
+  section{padding-block:clamp(3rem,6vw,4.5rem)}
+  .sec-head{max-width:60ch;margin-bottom:2rem}
+  .sec-head h2{font-size:clamp(1.8rem,3.8vw,2.7rem)}
+  .sec-head p{margin-top:.7rem;color:var(--ink-soft);font-size:1.08em}
+
+  .concept-bar{background:var(--navy-dk);color:#cdd9f0;font-family:var(--disp);font-weight:600;font-size:.74rem;text-align:center;padding:.5rem 1rem}
+  .concept-bar a{color:var(--orange);border-bottom:1px solid rgba(244,123,32,.5)}
+
+  /* utility + header */
+  .util{background:var(--navy);color:#cfe;font-size:.84rem}
+  .util .wrap{display:flex;gap:1.2rem;align-items:center;height:38px;color:#dbe6fb;font-family:var(--disp);font-weight:600}
+  .util a{color:#fff}.util .sp{margin-left:auto}
+  header.site{position:sticky;top:0;z-index:50;background:var(--white);box-shadow:0 1px 0 var(--line)}
+  .nav{display:flex;align-items:center;gap:1.4rem;height:74px}
+  .nav .logo{height:46px;width:auto}
+  .nav-links{margin-left:auto;display:flex;gap:1.5rem;align-items:center}
+  .nav-links a{font-family:var(--disp);font-weight:600;font-size:.92rem;color:var(--navy)}
+  .nav-links a:hover{color:var(--orange)}
+  .nav-toggle{display:none;margin-left:auto;background:none;border:none;color:var(--navy);font-size:1.6rem}
+
+  /* hero */
+  .hero{background:linear-gradient(160deg,var(--navy-dk),var(--navy) 70%,#1a3488);color:#fff;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(70% 90% at 100% 0%,rgba(244,123,32,.16),transparent 60%);pointer-events:none}
+  .hero-grid{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(1.5rem,4vw,3rem);align-items:center;padding-block:clamp(2.5rem,5vw,4rem)}
+  .hero h1{font-size:clamp(2.3rem,5vw,3.7rem);font-weight:800}
+  .hero h1 .o{color:var(--orange)}
+  .hero-lede{margin-top:1rem;font-size:1.16rem;color:#cfdbf2;max-width:44ch}
+  .chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.4rem}
+  .chip{font-family:var(--disp);font-weight:600;font-size:.8rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:100px;padding:.4em .9em}
+  .chip b{color:var(--orange)}
+  .hero-cta{margin-top:1.6rem;display:flex;flex-wrap:wrap;gap:.7rem}
+  /* request form card */
+  .req{background:var(--white);color:var(--ink);border-radius:16px;padding:clamp(1.3rem,2.5vw,1.8rem);box-shadow:0 36px 70px -30px rgba(0,0,0,.55)}
+  .req h3{font-size:1.35rem;color:var(--navy)}
+  .req p{font-size:.9rem;color:var(--ink-soft);margin:.3rem 0 1rem}
+  .req .row{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+  .req label{font-family:var(--disp);font-weight:600;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--faint);display:block;margin-bottom:.25rem}
+  .req input,.req select,.req textarea{width:100%;font-family:var(--body);font-size:.95rem;padding:.65em .8em;border:1.5px solid var(--line);border-radius:9px}
+  .req input:focus,.req select:focus,.req textarea:focus{outline:none;border-color:var(--blue)}
+  .req .field{margin-bottom:.7rem}
+  .req .btn{width:100%;justify-content:center;margin-top:.3rem}
+  .req-note{font-family:var(--disp);font-size:.72rem;color:var(--faint);text-align:center;margin-top:.6rem}
+  .req-ok{background:#e9f7ee;border:1px solid #b6e3c6;color:#1c7a43;border-radius:9px;padding:.7rem .9rem;font-size:.9rem;margin-top:.6rem;display:none}
+
+  /* services */
+  .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+  .svc{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:1.5rem;transition:transform .3s var(--ease),box-shadow .3s}
+  .svc:hover{transform:translateY(-5px);box-shadow:0 24px 44px -28px rgba(23,32,51,.35)}
+  .svc-ic{width:50px;height:50px;border-radius:12px;display:grid;place-items:center;background:var(--paper-2);color:var(--navy);margin-bottom:1rem}
+  .svc h3{font-size:1.25rem;color:var(--navy)}
+  .svc p{margin:.4rem 0 .7rem;color:var(--ink-soft);font-size:.95em}
+  .svc .tags{font-family:var(--disp);font-size:.72rem;font-weight:600;color:var(--orange);letter-spacing:.03em}
+
+  /* why us */
+  .why{background:var(--navy-dk);color:#fff}
+  .why .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.12);border-radius:14px;overflow:hidden;margin-bottom:2rem}
+  .stat{background:var(--navy-dk);padding:1.5rem 1rem;text-align:center}
+  .stat b{font-family:var(--disp);font-weight:800;font-size:clamp(1.6rem,3vw,2.2rem);color:var(--orange);display:block}
+  .stat span{font-size:.82rem;color:#aebbd8;font-family:var(--disp);font-weight:600}
+  .why-pts{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+  .why-pt h3{font-size:1.15rem;color:#fff;margin-bottom:.3rem}
+  .why-pt p{color:#bcc8e2;font-size:.95em}
+  .brands{margin-top:2rem;text-align:center}
+  .brands p{font-family:var(--disp);font-weight:600;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:#8b9ac0;margin-bottom:.7rem}
+  .brands span{display:inline-block;margin:.25rem .7rem;font-family:var(--disp);font-weight:700;font-size:1.05rem;color:#d6dffl;color:#d6dff5}
+
+  /* after hours */
+  .afterhrs{background:linear-gradient(100deg,var(--orange),#ff9d4d);color:#fff}
+  .afterhrs .wrap{display:grid;grid-template-columns:1.4fr auto;gap:2rem;align-items:center}
+  .afterhrs h2{font-size:clamp(1.6rem,3.4vw,2.4rem);color:#fff}
+  .afterhrs p{margin-top:.5rem;color:rgba(255,255,255,.92);max-width:46ch}
+  .afterhrs .btn{background:var(--navy-dk);color:#fff}
+
+  /* reviews */
+  .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+  .rev{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:1.5rem}
+  .stars{color:var(--orange);font-size:1.1rem;letter-spacing:2px}
+  .rev p{margin:.6rem 0;font-size:1em}
+  .rev cite{font-family:var(--disp);font-weight:700;font-size:.85rem;color:var(--navy);font-style:normal}
+
+  /* maintenance */
+  .maint{background:var(--paper-2)}
+  .maint .box{display:grid;grid-template-columns:1.3fr auto;gap:2rem;align-items:center;background:var(--white);border:1px solid var(--line);border-radius:16px;padding:clamp(1.5rem,3vw,2.4rem)}
+  .maint h2{font-size:clamp(1.6rem,3.2vw,2.2rem);color:var(--navy)}
+  .maint p{margin-top:.5rem;color:var(--ink-soft);max-width:48ch}
+
+  footer.site{background:var(--navy-dk);color:#aebbd8;padding-block:3rem}
+  .foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:2rem}
+  footer .logo{height:46px;margin-bottom:1rem;background:#fff;padding:8px 12px;border-radius:10px;display:inline-block}
+  footer h4{font-family:var(--disp);color:#fff;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.7rem}
+  footer a,footer p{display:block;color:#aebbd8;font-size:.92rem;padding:.18rem 0}
+  footer a:hover{color:var(--orange)}
+  .foot-fine{margin-top:2rem;padding-top:1.3rem;border-top:1px solid rgba(255,255,255,.12);font-size:.8rem;color:#7e8cb0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
+  @media(max-width:920px){
+    .nav-links{display:none}.nav-toggle{display:block}.util .wrap{font-size:.76rem;gap:.7rem}
+    .hero-grid,.svc-grid,.why .stats,.why-pts,.afterhrs .wrap,.rev-grid,.maint .box,.foot-grid,.req .row{grid-template-columns:1fr}
+    .svc-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:560px){.svc-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+<div class="concept-bar">Concept mockup by Werth Design — not affiliated with Woodrow Services. <a href="https://werth-code.github.io/werth-design/" target="_blank" rel="noopener">Like it? Let's talk →</a></div>
+
+<div class="util"><div class="wrap"><span>⚡ Same-day service across New Castle County</span><span class="sp"></span><a href="tel:+13023848639">Call (302) 384-8639</a><span>· Open 24/7</span></div></div>
+
+<header class="site">
+  <div class="wrap nav">
+    <img class="logo" src="assets/logo.png" alt="Woodrow Services — Heating, Cooling, Plumbing" />
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#services">Services</a><a href="#why">Why Woodrow</a><a href="#reviews">Reviews</a><a href="#area">Service Area</a>
+      <a class="btn btn-orange" href="#request" style="padding:.6em 1.1em">Request Service</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<main>
+  <!-- HERO + request form -->
+  <section class="hero" id="request">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Wilmington, DE · New Castle County</p>
+        <h1>Third-generation <span class="o">HVAC &amp; plumbing</span> that actually answers.</h1>
+        <p class="hero-lede">Heat out? AC down? Leak under the sink? The Woodrow family has kept New Castle County comfortable for 30+ years — and unlike the other guys, we pick up after hours.</p>
+        <div class="chips">
+          <span class="chip"><b>★★★★★</b> 5-star service</span>
+          <span class="chip"><b>BBB</b> A+ rated</span>
+          <span class="chip">Free estimates</span>
+          <span class="chip">Financing available</span>
+        </div>
+        <div class="hero-cta">
+          <a class="btn btn-orange" href="tel:+13023848639">📞 Call (302) 384-8639</a>
+          <a class="btn btn-ghost" href="#services" style="color:#fff">See our services</a>
+        </div>
+      </div>
+      <form class="req" id="reqForm" novalidate>
+        <h3>Request service</h3>
+        <p>Tell us what's going on — we'll text you back fast, day or night.</p>
+        <div class="row">
+          <div class="field"><label for="rn">Name</label><input id="rn" required placeholder="Jane Doe" /></div>
+          <div class="field"><label for="rp">Phone</label><input id="rp" type="tel" required placeholder="(302) 555-0123" /></div>
+        </div>
+        <div class="field"><label for="rs">What do you need?</label>
+          <select id="rs"><option>Heating — repair or replace</option><option>Cooling / AC — repair or replace</option><option>Plumbing</option><option>Indoor air quality</option><option>It's an emergency (no heat / no AC / leak)</option></select>
+        </div>
+        <div class="field"><label for="rd">What's going on?</label><textarea id="rd" rows="2" placeholder="e.g. AC stopped cooling this morning"></textarea></div>
+        <button class="btn btn-orange" type="submit">Get my appointment →</button>
+        <p class="req-note">No call required · Usually back to you within the hour</p>
+        <div class="req-ok" id="reqOk">✓ Thanks! In a real build this books your appointment and texts you a confirmation. (Demo — no message was sent.)</div>
+      </form>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head reveal"><p class="eyebrow">What we do</p><h2>One family, all three trades.</h2><p>Heating, cooling, and plumbing — repair, install, or replace, on any make or model.</p></div>
+      <div class="svc-grid">
+        <div class="svc reveal"><span class="svc-ic"><svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2v22M7 6l6-4 6 4M7 20l6 4 6-4M4 13h18"/></svg></span><h3>Heating</h3><p>Gas &amp; oil furnaces, heat pumps, boilers, mini-splits, radiant floors.</p><div class="tags">Repair · Install · Replace</div></div>
+        <div class="svc reveal"><span class="svc-ic"><svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="13" cy="13" r="4"/><path d="M13 2v4M13 20v4M2 13h4M20 13h4M5 5l3 3M18 18l3 3M21 5l-3 3M8 18l-3 3"/></svg></span><h3>Cooling / AC</h3><p>AC repair, tune-ups, and full system replacements — any make or model.</p><div class="tags">Repair · Service · Replace</div></div>
+        <div class="svc reveal"><span class="svc-ic"><svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 3v6a4 4 0 0 0 8 0V6M11 13v6a3 3 0 0 1-6 0M19 9h2M19 13h2"/></svg></span><h3>Plumbing</h3><p>Leak repairs, water-heater replacements, fixtures &amp; high-efficiency upgrades.</p><div class="tags">Repair · Replace · Upgrade</div></div>
+        <div class="svc reveal"><span class="svc-ic"><svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12a4 4 0 1 1 4 4H3M9 6a3 3 0 1 1 3 3H3M16 18a3 3 0 1 0 3-3H8"/></svg></span><h3>Air Quality</h3><p>Air cleaning &amp; filtration, humidification, dehumidification, zoning.</p><div class="tags">Breathe easier</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="why" id="why">
+    <div class="wrap">
+      <div class="stats reveal">
+        <div class="stat"><b>3</b><span>generations</span></div>
+        <div class="stat"><b>30+ yrs</b><span>in the trade</span></div>
+        <div class="stat"><b>A+</b><span>BBB rated</span></div>
+        <div class="stat"><b>Free</b><span>estimates</span></div>
+      </div>
+      <div class="sec-head reveal" style="color:#fff;max-width:54ch"><p class="eyebrow">Why Woodrow</p><h2 style="color:#fff">The name your neighbors trust.</h2></div>
+      <div class="why-pts">
+        <div class="why-pt reveal"><h3>A real family business</h3><p>Owner Shawn Woodrow is a third-generation master HVAC &amp; plumbing license holder — not a call center.</p></div>
+        <div class="why-pt reveal"><h3>We answer after hours</h3><p>No heat at midnight? Request service any time and we get back to you fast — when it matters most.</p></div>
+        <div class="why-pt reveal"><h3>Honest, upfront pricing</h3><p>Free estimates, financing on new systems, and "don't replace, repair" when that's the right call.</p></div>
+      </div>
+      <div class="brands reveal"><p>We service every major brand</p><span>Carrier</span><span>Trane</span><span>Lennox</span><span>Bryant</span><span>Rheem</span><span>Daikin</span><span>Mitsubishi</span><span>American Standard</span></div>
+    </div>
+  </section>
+
+  <!-- AFTER HOURS (AI assistant) -->
+  <section class="afterhrs">
+    <div class="wrap">
+      <div>
+        <h2>Heat or AC out at 9pm? We don't send you to voicemail.</h2>
+        <p>Ask our assistant to book your repair right now — even after hours — and we'll confirm by text. The job gets handled, not lost.</p>
+      </div>
+      <a class="btn" href="#" data-open-chat>💬 Book with our assistant</a>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews">
+    <div class="wrap">
+      <div class="sec-head reveal"><p class="eyebrow">Reviews</p><h2>5 stars from your neighbors.</h2><p>Highly recommended across Nextdoor, Angi, and the BBB.</p></div>
+      <div class="rev-grid">
+        <div class="rev reveal"><div class="stars">★★★★★</div><p>"Came out the same day and fixed our AC in the middle of a heat wave. Fair price, no upsell."</p><cite>— Representative review</cite></div>
+        <div class="rev reveal"><div class="stars">★★★★★</div><p>"Our heat went out at night and they actually answered. Third generation and it shows — they know their stuff."</p><cite>— Representative review</cite></div>
+        <div class="rev reveal"><div class="stars">★★★★★</div><p>"Honest, on time, and cleaned up after. We won't call anyone else for HVAC or plumbing."</p><cite>— Representative review</cite></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAINTENANCE -->
+  <section class="maint" id="area">
+    <div class="wrap">
+      <div class="box reveal">
+        <div>
+          <p class="eyebrow">Comfort Club</p>
+          <h2>Stop it breaking at the worst time.</h2>
+          <p>Seasonal tune-ups, priority scheduling, and discounts on repairs — so your heating and cooling get checked before they quit on the coldest or hottest day. Serving Wilmington, Newark, Bear, New Castle, Hockessin &amp; all of New Castle County.</p>
+        </div>
+        <a class="btn btn-navy" href="#request">Join the Comfort Club →</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <img class="logo" src="assets/logo.png" alt="Woodrow Services" />
+        <p style="max-width:34ch">Third-generation, family-owned heating, cooling &amp; plumbing — keeping New Castle County comfortable.</p>
+      </div>
+      <div><h4>Contact</h4><a href="tel:+13023848639">(302) 384-8639</a><a href="mailto:customerservice@woodrowservices.com">customerservice@woodrowservices.com</a><p>1624 Newport Gap Pike, Bldg 2<br/>Wilmington, DE 19808</p></div>
+      <div><h4>Service</h4><a href="#request">Request service</a><a href="#services">Heating · Cooling · Plumbing</a><a href="#why">Why Woodrow</a><a href="#area">Comfort Club</a></div>
+    </div>
+    <div class="foot-fine"><span>Open 24/7 · Free estimates · Financing available</span><span>Concept mockup by Werth Design · werth-code.github.io/werth-design</span></div>
+  </div>
+</footer>
+
+<div id="ask"></div>
+
+<script>
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+document.getElementById('reqForm').addEventListener('submit',function(e){e.preventDefault();
+  var n=document.getElementById('rn'),p=document.getElementById('rp');
+  if(!n.value.trim()||!p.value.trim()){(!n.value.trim()?n:p).focus();return;}
+  document.getElementById('reqOk').style.display='block';
+});
+document.querySelectorAll('[data-open-chat]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();window.Ask&&window.Ask.open('book')})});
+document.querySelector('.nav-toggle').onclick=function(){var l=document.querySelector('.nav-links');l.style.display='flex';l.style.position='absolute';l.style.flexDirection='column';l.style.background='#fff';l.style.right='1rem';l.style.top='110px';l.style.padding='1rem';l.style.borderRadius='10px';l.style.boxShadow='0 20px 40px -20px rgba(0,0,0,.3)';this.style.display='none'};
+</script>
+<script src="ask.js" defer></script>
+</body>
+</html>
