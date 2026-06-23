@@ -167,7 +167,12 @@
   .reveal.in{opacity:1;transform:none}
 
   @media(max-width:900px){
-    .nav-links{display:none}.nav-toggle{display:block}
+    .nav-links{position:absolute;top:100%;left:0;right:0;margin:0;flex-direction:column;align-items:stretch;gap:0;background:var(--green-dk);padding:.4rem 6vw 1.15rem;box-shadow:0 26px 44px -24px rgba(0,0,0,.55);border-top:1px solid rgba(255,255,255,.14);opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .22s ease,transform .22s ease,visibility .22s}
+    .nav-open .nav-links{opacity:1;visibility:visible;transform:none}
+    .nav-links a{padding:.95rem .15rem;border-bottom:1px solid rgba(255,255,255,.14);font-size:1.04rem}
+    .nav-links a:last-child{border-bottom:0}
+    .nav-links .btn{margin-top:.75rem;justify-content:center}
+    .nav-toggle{display:block;line-height:1;cursor:pointer}
     .hero-grid,.ways,.impact-card,.finder,.split{grid-template-columns:1fr}
     .split.alt{direction:ltr}
     .foot-grid{grid-template-columns:1fr}
@@ -182,14 +187,14 @@
 <header class="site">
   <div class="wrap nav">
     <img src="assets/logo-white.png" alt="Food Bank of Delaware" />
-    <nav class="nav-links" aria-label="Primary">
+    <nav class="nav-links" id="primaryNav" aria-label="Primary">
       <a href="#find-food">Get Food</a>
       <a href="#give">Donate</a>
       <a href="#volunteer">Volunteer</a>
       <a href="#catering">Catering</a>
       <a class="btn btn-gold" href="#give" style="padding:.6em 1.2em">Donate</a>
     </nav>
-    <button class="nav-toggle" aria-label="Menu">☰</button>
+    <button class="nav-toggle" aria-label="Open menu" aria-controls="primaryNav" aria-expanded="false">☰</button>
   </div>
 </header>
 
@@ -398,7 +403,11 @@ document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
 
 /* ---------- simple demo actions (CTA stubs) ---------- */
 ['giveBtn','cateringBtn','volBtn'].forEach(function(id){var el=document.getElementById(id);if(el)el.addEventListener('click',function(e){e.preventDefault();window.Ask&&window.Ask.open(id);})});
-document.querySelector('.nav-toggle').onclick=function(){document.querySelector('.nav-links').style.display='flex';this.style.display='none'};
+(function(){var t=document.querySelector('.nav-toggle'),h=document.querySelector('header.site');if(!t||!h)return;
+  function set(o){h.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o);t.setAttribute('aria-label',o?'Close menu':'Open menu');t.innerHTML=o?'✕':'☰';}
+  t.addEventListener('click',function(){set(!h.classList.contains('nav-open'));});
+  h.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){set(false);});});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});})();
 </script>
 <script src="ask.js" defer></script>
 </body>

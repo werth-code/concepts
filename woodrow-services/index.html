@@ -174,7 +174,12 @@
   .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
   .reveal.in{opacity:1;transform:none}
   @media(max-width:920px){
-    .nav-links{display:none}.nav-toggle{display:block}.util .wrap{font-size:.76rem;gap:.7rem}
+    .nav-links{position:absolute;top:100%;left:0;right:0;margin:0;flex-direction:column;align-items:stretch;gap:0;background:var(--white);padding:.4rem 6vw 1.15rem;box-shadow:0 26px 44px -24px rgba(12,24,56,.5);border-top:1px solid var(--line);opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .22s var(--ease),transform .22s var(--ease),visibility .22s}
+    .nav-open .nav-links{opacity:1;visibility:visible;transform:none}
+    .nav-links a{padding:.95rem .15rem;border-bottom:1px solid var(--line);font-size:1.04rem}
+    .nav-links a:last-child{border-bottom:0}
+    .nav-links .btn{margin-top:.75rem;justify-content:center}
+    .nav-toggle{display:block;line-height:1;cursor:pointer}.util .wrap{font-size:.76rem;gap:.7rem}
     .hero-grid,.svc-grid,.why .stats,.why-pts,.afterhrs .wrap,.rev-grid,.maint .box,.foot-grid,.req .row{grid-template-columns:1fr}
     .svc-grid{grid-template-columns:1fr 1fr}
   }
@@ -190,11 +195,11 @@
 <header class="site">
   <div class="wrap nav">
     <img class="logo" src="assets/logo.png" alt="Woodrow Services — Heating, Cooling, Plumbing" />
-    <nav class="nav-links" aria-label="Primary">
+    <nav class="nav-links" id="primaryNav" aria-label="Primary">
       <a href="#services">Services</a><a href="#why">Why Woodrow</a><a href="#reviews">Reviews</a><a href="#area">Service Area</a>
       <a class="btn btn-orange" href="#request" style="padding:.6em 1.1em">Request Service</a>
     </nav>
-    <button class="nav-toggle" aria-label="Menu">☰</button>
+    <button class="nav-toggle" aria-label="Open menu" aria-controls="primaryNav" aria-expanded="false">☰</button>
   </div>
 </header>
 
@@ -330,7 +335,11 @@ document.getElementById('reqForm').addEventListener('submit',function(e){e.preve
   document.getElementById('reqOk').style.display='block';
 });
 document.querySelectorAll('[data-open-chat]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();window.Ask&&window.Ask.open('book')})});
-document.querySelector('.nav-toggle').onclick=function(){var l=document.querySelector('.nav-links');l.style.display='flex';l.style.position='absolute';l.style.flexDirection='column';l.style.background='#fff';l.style.right='1rem';l.style.top='110px';l.style.padding='1rem';l.style.borderRadius='10px';l.style.boxShadow='0 20px 40px -20px rgba(0,0,0,.3)';this.style.display='none'};
+(function(){var t=document.querySelector('.nav-toggle'),h=document.querySelector('header.site');if(!t||!h)return;
+  function set(o){h.classList.toggle('nav-open',o);t.setAttribute('aria-expanded',o);t.setAttribute('aria-label',o?'Close menu':'Open menu');t.innerHTML=o?'✕':'☰';}
+  t.addEventListener('click',function(){set(!h.classList.contains('nav-open'));});
+  h.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){set(false);});});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});})();
 </script>
 <script src="ask.js" defer></script>
 </body>
