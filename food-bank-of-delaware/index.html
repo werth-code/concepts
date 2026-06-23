@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Concept mockup: noindex so this labeled demo never ranks as if it were the real fbd.org.
+       (All the SEO tags below are still present + demonstrable in view-source.) -->
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- ===== SEO (every gap from the audit, fixed) ===== -->
+  <title>Food Bank of Delaware — Hunger Relief, Food Pantries &amp; Help in Newark &amp; Milford, DE</title>
+  <meta name="description" content="The Food Bank of Delaware feeds Delaware — find a food pantry near you, donate ($1 = 3 meals), volunteer, or order catering that funds culinary scholarships. Serving Newark, Milford, and the whole state." />
+  <link rel="canonical" href="https://www.fbd.org/" />
+  <meta name="theme-color" content="#123c1f" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Food Bank of Delaware" />
+  <meta property="og:title" content="Food Bank of Delaware — Feeding Delaware" />
+  <meta property="og:description" content="Find food near you, donate ($1 = 3 meals), volunteer, or order catering that funds culinary scholarships. Serving all of Delaware." />
+  <meta property="og:image" content="assets/people1.jpg" />
+  <meta property="og:url" content="https://www.fbd.org/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Food Bank of Delaware — Feeding Delaware" />
+  <meta name="twitter:description" content="Find food, donate, volunteer, or order catering that funds scholarships. Serving all of Delaware." />
+  <meta name="twitter:image" content="assets/people1.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- ===== Structured data (was entirely missing) ===== -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org","@type":"NGO","name":"Food Bank of Delaware",
+    "url":"https://www.fbd.org/","logo":"assets/logo-white.png",
+    "description":"Statewide hunger-relief nonprofit feeding Delaware through food pantries, mobile pantries, and job-training programs.",
+    "memberOf":{"@type":"Organization","name":"Feeding America"},
+    "email":"foodbank@fbd.org",
+    "location":[
+      {"@type":"Place","name":"Newark Branch","address":{"@type":"PostalAddress","streetAddress":"222 Lake Drive","addressLocality":"Newark","addressRegion":"DE","postalCode":"19702","addressCountry":"US"},"telephone":"+1-302-292-1305"},
+      {"@type":"Place","name":"Milford Branch","address":{"@type":"PostalAddress","streetAddress":"102 DE Veterans Blvd.","addressLocality":"Milford","addressRegion":"DE","postalCode":"19963","addressCountry":"US"},"telephone":"+1-302-424-3301"}
+    ],
+    "areaServed":{"@type":"State","name":"Delaware"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"How do I find food near me?","acceptedAnswer":{"@type":"Answer","text":"Use the Find Food tool to search by ZIP code for the nearest partner pantry or mobile pantry, or call (302) 292-1305."}},
+      {"@type":"Question","name":"How much of my donation goes to food?","acceptedAnswer":{"@type":"Answer","text":"For every $1 donated, the Food Bank of Delaware can provide 3 meals to neighbors in need."}},
+      {"@type":"Question","name":"Can I order catering from the Food Bank?","acceptedAnswer":{"@type":"Answer","text":"Yes — catering is prepared by culinary-training students and every order funds scholarships. Order platters, boxed lunches, and more online."}}
+    ]
+  }
+  </script>
+
+  <style>
+  :root{
+    --green:#2f8a3e; --green-mid:#1d6b34; --green-dk:#123c1f;
+    --gold:#f0a81a; --gold-dk:#cf8f08; --orange:#e2622a;
+    --paper:#f7f5ee; --paper-2:#efeadd; --ink:#1a2a1d; --ink-soft:#43533f; --faint:#6c7a66;
+    --line:rgba(26,42,29,.14); --white:#fff;
+    --disp:"Sora",system-ui,sans-serif; --body:"Plus Jakarta Sans",system-ui,sans-serif;
+    --wrap:1180px; --ease:cubic-bezier(.2,.65,.2,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:84px}
+  body{font-family:var(--body);color:var(--ink);background:var(--paper);font-size:clamp(1rem,.4vw+.95rem,1.08rem);line-height:1.6;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  ul{list-style:none}
+  .wrap{width:100%;max-width:var(--wrap);margin-inline:auto;padding-inline:clamp(1.1rem,4vw,2.5rem)}
+  h1,h2,h3{font-family:var(--disp);font-weight:700;line-height:1.07;letter-spacing:-.02em}
+  .btn{display:inline-flex;align-items:center;gap:.5em;font-family:var(--disp);font-weight:600;font-size:.95rem;padding:.85em 1.5em;border-radius:100px;cursor:pointer;border:none;transition:transform .25s var(--ease),background .25s,box-shadow .25s}
+  .btn-gold{background:var(--gold);color:var(--green-dk);box-shadow:0 10px 24px -12px rgba(207,143,8,.8)}
+  .btn-gold:hover{background:var(--gold-dk);transform:translateY(-2px)}
+  .btn-green{background:var(--green);color:#fff}
+  .btn-green:hover{background:var(--green-mid);transform:translateY(-2px)}
+  .btn-ghost{background:transparent;border:1.5px solid currentColor}
+  .btn-ghost:hover{background:rgba(255,255,255,.12);transform:translateY(-2px)}
+  .eyebrow{font-family:var(--disp);font-weight:600;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green)}
+  section{padding-block:clamp(3rem,6vw,5rem)}
+  .sec-head{max-width:60ch;margin-bottom:2.2rem}
+  .sec-head h2{font-size:clamp(1.8rem,3.6vw,2.7rem)}
+  .sec-head p{margin-top:.8rem;color:var(--ink-soft);font-size:1.1em}
+
+  /* concept ribbon */
+  .concept-bar{background:var(--green-dk);color:#e9f0e6;font-family:var(--disp);font-size:.74rem;letter-spacing:.04em;text-align:center;padding:.55rem 1rem}
+  .concept-bar a{color:var(--gold);font-weight:600;border-bottom:1px solid rgba(240,168,26,.5)}
+
+  /* header */
+  header.site{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--green-dk) 96%,transparent);backdrop-filter:blur(8px);color:#fff}
+  .nav{display:flex;align-items:center;gap:1.4rem;height:72px}
+  .nav img{height:42px;width:auto}
+  .nav-links{margin-left:auto;display:flex;gap:1.5rem;align-items:center}
+  .nav-links a{font-family:var(--disp);font-weight:500;font-size:.92rem;color:#e9f0e6}
+  .nav-links a:hover{color:var(--gold)}
+  .nav-toggle{display:none;margin-left:auto;background:none;border:none;color:#fff;font-size:1.6rem}
+
+  /* hero */
+  .hero{position:relative;background:linear-gradient(180deg,var(--green-dk),var(--green-mid));color:#fff;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center;padding-block:clamp(2.5rem,5vw,4rem)}
+  .hero h1{font-size:clamp(2.4rem,5.5vw,4rem);font-weight:700}
+  .hero h1 .gold{color:var(--gold)}
+  .hero-lede{margin-top:1.1rem;font-size:1.18rem;color:#dfe9db;max-width:42ch}
+  .hero-cta{margin-top:1.8rem;display:flex;flex-wrap:wrap;gap:.8rem}
+  .hero-stat{margin-top:1.6rem;font-family:var(--disp);font-size:.85rem;color:#cfe0c9;letter-spacing:.02em}
+  .hero-stat b{color:var(--gold)}
+  .hero-photo{position:relative;border-radius:18px;overflow:hidden;box-shadow:0 40px 70px -30px rgba(0,0,0,.6);aspect-ratio:4/3}
+  .hero-photo img{width:100%;height:100%;object-fit:cover}
+  .hero-badge{position:absolute;bottom:14px;left:14px;background:var(--gold);color:var(--green-dk);font-family:var(--disp);font-weight:700;font-size:.8rem;padding:.5em 1em;border-radius:100px}
+
+  /* three ways */
+  .ways{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+  .way{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:1.6rem;transition:transform .3s var(--ease),box-shadow .3s}
+  .way:hover{transform:translateY(-5px);box-shadow:0 24px 44px -28px rgba(26,42,29,.4)}
+  .way-ic{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;background:color-mix(in srgb,var(--green) 14%,transparent);color:var(--green);margin-bottom:1rem}
+  .way h3{font-size:1.3rem}
+  .way p{margin:.5rem 0 1rem;color:var(--ink-soft);font-size:.96em}
+  .way a{font-family:var(--disp);font-weight:600;color:var(--green);font-size:.92rem}
+
+  /* impact calculator */
+  .impact{background:var(--green-dk);color:#fff}
+  .impact-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:clamp(1.6rem,3vw,2.6rem);display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center}
+  .impact-num{font-family:var(--disp);font-weight:700;font-size:clamp(3rem,7vw,5rem);color:var(--gold);line-height:1}
+  .impact-meals{font-family:var(--disp);font-size:1.1rem;color:#dfe9db;margin-top:.3rem}
+  .slider-row{margin-top:1.4rem}
+  .slider-row input[type=range]{width:100%;accent-color:var(--gold);height:6px}
+  .amt-chips{display:flex;gap:.5rem;flex-wrap:wrap;margin:1rem 0}
+  .amt-chip{font-family:var(--disp);font-weight:600;font-size:.85rem;padding:.45em .9em;border-radius:100px;border:1.5px solid rgba(255,255,255,.25);background:transparent;color:#fff;cursor:pointer;transition:.2s}
+  .amt-chip.on,.amt-chip:hover{background:var(--gold);color:var(--green-dk);border-color:var(--gold)}
+  .freq{display:inline-flex;background:rgba(255,255,255,.1);border-radius:100px;padding:3px;margin-bottom:1rem}
+  .freq button{font-family:var(--disp);font-weight:600;font-size:.82rem;border:none;background:transparent;color:#dfe9db;padding:.4em 1em;border-radius:100px;cursor:pointer}
+  .freq button.on{background:#fff;color:var(--green-dk)}
+
+  /* find food */
+  .finder{display:grid;grid-template-columns:.9fr 1.1fr;gap:2rem;align-items:start}
+  .finder-box{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:1.6rem}
+  .finder-box label{font-family:var(--disp);font-weight:600;font-size:.85rem}
+  .zip-row{display:flex;gap:.6rem;margin-top:.6rem}
+  .zip-row input{flex:1;font-family:var(--body);font-size:1rem;padding:.8em 1em;border:1.5px solid var(--line);border-radius:12px}
+  .zip-row input:focus{outline:none;border-color:var(--green)}
+  .results{display:flex;flex-direction:column;gap:.8rem}
+  .result{background:var(--white);border:1px solid var(--line);border-left:4px solid var(--green);border-radius:12px;padding:1rem 1.2rem}
+  .result h4{font-family:var(--disp);font-size:1.05rem}
+  .result p{font-size:.9em;color:var(--ink-soft);margin-top:.2rem}
+  .result .meta{font-family:var(--disp);font-size:.78rem;color:var(--green);font-weight:600;margin-top:.4rem}
+
+  /* catering / split feature */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+  .split.alt{direction:rtl}.split.alt>*{direction:ltr}
+  .split-img{border-radius:18px;overflow:hidden;aspect-ratio:5/4;box-shadow:0 30px 56px -34px rgba(26,42,29,.5)}
+  .split-img img{width:100%;height:100%;object-fit:cover}
+  .menu-mini{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
+  .menu-mini span{font-family:var(--disp);font-size:.82rem;background:var(--paper-2);border:1px solid var(--line);border-radius:100px;padding:.4em .9em}
+  .scholarship{background:color-mix(in srgb,var(--gold) 16%,transparent);border-left:3px solid var(--gold);padding:.9rem 1.1rem;border-radius:8px;font-size:.95em;margin:1rem 0}
+
+  /* footer */
+  footer.site{background:var(--green-dk);color:#cfe0c9;padding-block:3rem}
+  .foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:2rem}
+  footer img{height:48px;margin-bottom:1rem}
+  footer h4{font-family:var(--disp);color:#fff;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.7rem}
+  footer a{display:block;color:#cfe0c9;font-size:.92rem;padding:.2rem 0}
+  footer a:hover{color:var(--gold)}
+  .foot-fine{margin-top:2rem;padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.14);font-size:.8rem;color:#9fb39a;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:900px){
+    .nav-links{display:none}.nav-toggle{display:block}
+    .hero-grid,.ways,.impact-card,.finder,.split{grid-template-columns:1fr}
+    .split.alt{direction:ltr}
+    .foot-grid{grid-template-columns:1fr}
+  }
+  </style>
+</head>
+<body>
+
+<!-- ===== Concept ribbon (clearly a mockup) ===== -->
+<div class="concept-bar">Concept mockup by Werth Design — not affiliated with the Food Bank of Delaware. <a href="https://werth-code.github.io/werth-design/" target="_blank" rel="noopener">Like it? Let's talk →</a></div>
+
+<header class="site">
+  <div class="wrap nav">
+    <img src="assets/logo-white.png" alt="Food Bank of Delaware" />
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#find-food">Get Food</a>
+      <a href="#give">Donate</a>
+      <a href="#volunteer">Volunteer</a>
+      <a href="#catering">Catering</a>
+      <a class="btn btn-gold" href="#give" style="padding:.6em 1.2em">Donate</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<main>
+  <!-- ===== HERO (single, clear H1) ===== -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow" style="color:var(--gold)">A Feeding America food bank · Serving all of Delaware</p>
+        <h1>Feeding <span class="gold">Delaware</span>, with kindness and dignity.</h1>
+        <p class="hero-lede">Find food near you, give a little to do a lot, or lend a hand — together we keep our neighbors fed across Newark, Milford, and every county between.</p>
+        <div class="hero-cta">
+          <a class="btn btn-gold" href="#give">Donate — $1 = 3 meals</a>
+          <a class="btn btn-ghost" href="#find-food" style="color:#fff">Find food near me</a>
+        </div>
+        <p class="hero-stat">For every <b>$1</b> donated, we provide <b>3 meals</b> to neighbors in need.</p>
+      </div>
+      <div class="hero-photo">
+        <img src="assets/people1.jpg" alt="Volunteers and neighbors at a Food Bank of Delaware distribution" />
+        <span class="hero-badge">Real Delawareans, real help</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== THREE WAYS TO HELP ===== -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">Take action</p>
+        <h2>Three ways to help — pick yours.</h2>
+        <p>Whether you're a neighbor who needs a hand, someone with a few dollars to give, or a few hours to share — there's a place for you here.</p>
+      </div>
+      <ul class="ways">
+        <li class="way reveal">
+          <span class="way-ic"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-6 9 6v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 21V12h6v9"/></svg></span>
+          <h3>Get food</h3>
+          <p>Find the nearest partner pantry or mobile pantry by ZIP code — in seconds, not six clicks.</p>
+          <a href="#find-food">Find food near me →</a>
+        </li>
+        <li class="way reveal">
+          <span class="way-ic"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-4.5-9.5-9C1 8 3 4 7 4c2 0 3 1 5 3 2-2 3-3 5-3 4 0 6 4 4.5 8C19 16.5 12 21 12 21z"/></svg></span>
+          <h3>Donate</h3>
+          <p>$1 becomes 3 meals. Give once or monthly — see your impact before you give.</p>
+          <a href="#give">See my impact →</a>
+        </li>
+        <li class="way reveal">
+          <span class="way-ic"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3.5"/><path d="M2 21c0-4 3-6 7-6s7 2 7 6"/><path d="M17 11l2 2 4-4"/></svg></span>
+          <h3>Volunteer</h3>
+          <p>Pack meals, sort food, staff a pantry. Pick a shift online and we'll send a reminder.</p>
+          <a href="#volunteer">Find a shift →</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== IMPACT CALCULATOR (AI/interactive) ===== -->
+  <section class="impact" id="give">
+    <div class="wrap">
+      <div class="sec-head reveal" style="color:#fff">
+        <p class="eyebrow" style="color:var(--gold)">Give a little, do a lot</p>
+        <h2 style="color:#fff">See your gift turn into meals.</h2>
+        <p style="color:#dfe9db">Move the slider — every dollar provides three meals for a Delaware neighbor.</p>
+      </div>
+      <div class="impact-card reveal">
+        <div>
+          <div class="freq" role="group" aria-label="Frequency">
+            <button class="on" data-freq="one">One-time</button>
+            <button data-freq="month">Monthly</button>
+          </div>
+          <div class="amt-chips" id="chips"></div>
+          <div class="slider-row">
+            <input type="range" id="amt" min="5" max="500" step="5" value="50" aria-label="Donation amount" />
+          </div>
+          <a class="btn btn-gold" id="giveBtn" href="#" style="margin-top:1rem">Donate $50</a>
+        </div>
+        <div style="text-align:center">
+          <div class="impact-num"><span id="meals">150</span></div>
+          <div class="impact-meals">meals for our neighbors<span id="permo"></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FIND FOOD (locator) ===== -->
+  <section id="find-food">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow">Get help</p>
+        <h2>Find food near you.</h2>
+        <p>Enter your ZIP code to find the closest partner pantry and mobile-pantry stops. Free and open to all Delawareans — no appointment needed.</p>
+      </div>
+      <div class="finder reveal">
+        <div class="finder-box">
+          <label for="zip">Your ZIP code</label>
+          <div class="zip-row">
+            <input id="zip" inputmode="numeric" maxlength="5" placeholder="e.g. 19801" />
+            <button class="btn btn-green" id="findBtn">Find food</button>
+          </div>
+          <p style="font-size:.85rem;color:var(--faint);margin-top:.8rem">Try 19801, 19713, or 19963 — or just press Find food to see all locations.</p>
+        </div>
+        <div class="results" id="results"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CATERING (earned revenue) ===== -->
+  <section id="catering" style="background:var(--paper-2)">
+    <div class="wrap">
+      <div class="split">
+        <div class="split-img reveal"><img src="assets/culinary.jpg" alt="Culinary-training students preparing catering" /></div>
+        <div class="reveal">
+          <p class="eyebrow">Cater with purpose</p>
+          <h2 style="font-size:clamp(1.8rem,3.6vw,2.6rem)">Order catering that feeds two causes at once.</h2>
+          <p style="margin-top:.8rem;color:var(--ink-soft)">Platters, boxed lunches, and trays prepared by students in our culinary-training program — for your next meeting, event, or office lunch.</p>
+          <div class="menu-mini">
+            <span>Deli platter $11.95/pp</span><span>Boxed lunch $13.95/pp</span><span>FBD chopped salad</span><span>Fresh fruit</span><span>Cookies &amp; brownies</span>
+          </div>
+          <div class="scholarship"><strong>Every order funds a scholarship</strong> to our life-changing culinary job-training programs.</div>
+          <a class="btn btn-gold" id="cateringBtn" href="#">Order catering online →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VOLUNTEER ===== -->
+  <section id="volunteer">
+    <div class="wrap">
+      <div class="split alt">
+        <div class="split-img reveal"><img src="assets/pantry.jpg" alt="Volunteers sorting and packing food" /></div>
+        <div class="reveal">
+          <p class="eyebrow">Lend a hand</p>
+          <h2 style="font-size:clamp(1.8rem,3.6vw,2.6rem)">A few hours, a lot of impact.</h2>
+          <p style="margin-top:.8rem;color:var(--ink-soft)">Pack meals for children and seniors, sort donated food, or staff a mobile pantry. Pick a shift that fits your schedule — we'll send a friendly reminder so you never miss it.</p>
+          <a class="btn btn-green" href="#" id="volBtn" style="margin-top:1.2rem">Find a volunteer shift →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <img src="assets/logo-white.png" alt="Food Bank of Delaware" />
+        <p style="font-size:.92rem;max-width:32ch">Feeding Delaware through food pantries, mobile pantries, and job training — with kindness, dignity, and respect.</p>
+      </div>
+      <div>
+        <h4>Visit us</h4>
+        <p style="font-size:.9rem;line-height:1.7">Newark: 222 Lake Drive, Newark, DE 19702<br/>(302) 292-1305<br/><br/>Milford: 102 DE Veterans Blvd., Milford, DE 19963<br/>(302) 424-3301</p>
+      </div>
+      <div>
+        <h4>Take action</h4>
+        <a href="#give">Donate</a><a href="#volunteer">Volunteer</a><a href="#find-food">Find food</a><a href="#catering">Order catering</a>
+      </div>
+    </div>
+    <div class="foot-fine">
+      <span>A proud member of Feeding America · foodbank@fbd.org</span>
+      <span>Concept mockup by Werth Design · werth-code.github.io/werth-design</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== "Ask the Food Bank" AI assistant (scripted demo) ===== -->
+<div id="ask"></div>
+
+<script>
+/* ---------- reveals ---------- */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+
+/* ---------- impact calculator ---------- */
+(function(){
+  var amt=document.getElementById('amt'),meals=document.getElementById('meals'),btn=document.getElementById('giveBtn'),
+      permo=document.getElementById('permo'),chips=document.getElementById('chips');
+  var freq='one';
+  [10,25,50,100,250].forEach(function(v){var b=document.createElement('button');b.className='amt-chip'+(v===50?' on':'');b.textContent='$'+v;b.onclick=function(){amt.value=v;render();setChip(v)};chips.appendChild(b)});
+  function setChip(v){document.querySelectorAll('.amt-chip').forEach(function(c){c.classList.toggle('on',c.textContent==='$'+v)})}
+  function render(){var v=+amt.value;meals.textContent=(v*3).toLocaleString();btn.textContent='Donate $'+v+(freq==='month'?'/mo':'');permo.textContent=freq==='month'?' every month':'';setChip(v)}
+  amt.addEventListener('input',render);
+  document.querySelectorAll('.freq button').forEach(function(b){b.onclick=function(){freq=b.dataset.freq;document.querySelectorAll('.freq button').forEach(function(x){x.classList.toggle('on',x===b)});render()}});
+  render();
+})();
+
+/* ---------- find-food locator ---------- */
+(function(){
+  var PANTRIES=[
+    {n:"Food Bank of Delaware — Newark",z:"19702",a:"222 Lake Drive, Newark",t:"Mon–Fri 8am–4pm",k:["19702","19711","19713","19716","newark"]},
+    {n:"Mobile Pantry — Wilmington (Eastside)",z:"19801",a:"E. 8th St & Spruce St, Wilmington",t:"2nd Tuesday, 10am–noon",k:["19801","19802","19805","wilmington"]},
+    {n:"Hope Dining Room Pantry",z:"19805",a:"300 N. Broom St, Wilmington",t:"Tue/Thu, 9am–1pm",k:["19805","19806","wilmington"]},
+    {n:"Mobile Pantry — Bear / New Castle",z:"19701",a:"Rt 40 community lot, Bear",t:"4th Wednesday, 11am–1pm",k:["19701","19720","bear","new castle"]},
+    {n:"Food Bank of Delaware — Milford",z:"19963",a:"102 DE Veterans Blvd., Milford",t:"Mon–Fri 8am–4pm",k:["19963","19958","19901","milford","dover"]}
+  ];
+  var zip=document.getElementById('zip'),out=document.getElementById('results');
+  function card(p,note){return '<div class="result"><h4>'+p.n+'</h4><p>'+p.a+'</p><div class="meta">'+(note||'')+p.t+'</div></div>'}
+  function find(){
+    var q=(zip.value||'').trim().toLowerCase();
+    var hits=q?PANTRIES.filter(function(p){return p.k.some(function(k){return k.indexOf(q)===0||q.indexOf(k)===0})}):PANTRIES;
+    if(q && !hits.length){hits=PANTRIES.slice(0,3);out.innerHTML='<p style="color:var(--faint);font-size:.9rem;margin-bottom:.5rem">No exact match for '+q+' — here are the closest statewide options:</p>'+hits.map(function(p){return card(p)}).join('');return}
+    out.innerHTML=(q?'<p style="color:var(--green);font-family:var(--disp);font-weight:600;font-size:.9rem;margin-bottom:.3rem">'+hits.length+' location'+(hits.length>1?'s':'')+' near '+q+'</p>':'')+hits.map(function(p,i){return card(p,q&&i===0?'Nearest · ':'')}).join('');
+  }
+  document.getElementById('findBtn').onclick=find;
+  zip.addEventListener('keydown',function(e){if(e.key==='Enter')find()});
+  find();
+})();
+
+/* ---------- simple demo actions (CTA stubs) ---------- */
+['giveBtn','cateringBtn','volBtn'].forEach(function(id){var el=document.getElementById(id);if(el)el.addEventListener('click',function(e){e.preventDefault();window.Ask&&window.Ask.open(id);})});
+document.querySelector('.nav-toggle').onclick=function(){document.querySelector('.nav-links').style.display='flex';this.style.display='none'};
+</script>
+<script src="ask.js" defer></script>
+</body>
+</html>
