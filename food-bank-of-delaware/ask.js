@@ -14,7 +14,7 @@
   .ask-launch .dot{width:8px;height:8px;border-radius:50%;background:#2f9e5f;box-shadow:0 0 0 0 rgba(47,158,95,.6);animation:askpulse 2.2s infinite}
   @keyframes askpulse{70%{box-shadow:0 0 0 8px transparent}100%{box-shadow:0 0 0 0 transparent}}
   .ask-panel{position:fixed;right:20px;bottom:20px;z-index:9001;width:min(380px,calc(100vw - 2rem));max-height:min(560px,78vh);
-    display:none;flex-direction:column;background:#f7f5ee;border-radius:16px;overflow:hidden;
+    padding:0;display:none;flex-direction:column;background:#f7f5ee;border-radius:16px;overflow:hidden;
     box-shadow:0 40px 80px -28px rgba(0,0,0,.5);font-family:"Plus Jakarta Sans",sans-serif}
   .ask-open .ask-panel{display:flex}.ask-open .ask-launch{display:none}
   .ask-head{display:flex;align-items:center;gap:.7rem;padding:.85rem 1rem;background:${GREEN_DK};color:#fff}
