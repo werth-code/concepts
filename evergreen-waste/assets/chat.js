@@ -22,15 +22,27 @@
   function bot(t){add("bot", fmt(t));}
   function chips(arr){quick.innerHTML="";(arr||[]).forEach(function(c){var b=document.createElement("button");b.className="eg-chip";b.type="button";b.textContent=c;b.addEventListener("click",function(){handle(c);});quick.appendChild(b);});requestAnimationFrame(function(){log.scrollTop=log.scrollHeight;});}
 
+  function isDesktop(){ return window.matchMedia("(min-width:601px)").matches; }
+  // Keep the mobile panel fitted to the *visible* viewport so it never drifts under the
+  // URL bar or the keyboard.
+  function fitPanel(){
+    var p = root.querySelector(".eg-panel"); if(!p) return;
+    if(window.visualViewport && !isDesktop() && root.classList.contains("open")){
+      p.style.height = window.visualViewport.height + "px";
+    } else { p.style.height = ""; }
+  }
+  if(window.visualViewport){ window.visualViewport.addEventListener("resize", fitPanel); window.visualViewport.addEventListener("scroll", fitPanel); }
+
   window.egOpen = function(){
     root.classList.add("open");
-    if(input) input.focus();
+    fitPanel();
+    if(input && isDesktop()) input.focus();   // don't auto-pop the keyboard on mobile — wait for a tap
     if(!started){ started=true;
       bot("Hi! I'm Evergreen's assistant 🌲 I can check your area, size a bin, **start new service**, or answer billing and schedule questions — day or night. What do you need?");
       chips(DEFAULT);
     }
   };
-  window.egClose = function(){ root.classList.remove("open"); };
+  window.egClose = function(){ root.classList.remove("open"); var p=root.querySelector(".eg-panel"); if(p) p.style.height=""; };
 
   var KB = [
     { k:["area","serve","my street","zip","where do you","coverage","near me","wilmington","newark","bear","middletown"], a:"We serve **New Castle County, Delaware** — Wilmington, Newark, Bear, New Castle, Middletown and nearby. Tell me your ZIP and I'll confirm, or use the checker at the top of the page.", c:["Start service","Bin sizes","Talk to a person"] },

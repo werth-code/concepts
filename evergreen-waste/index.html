@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <!-- Concept redesign by Werth Design — noindexed mockup, not the live Evergreen site -->
 <meta name="robots" content="noindex, nofollow" />
 <title>Trash Pickup, Recycling &amp; Dumpster Rental in New Castle, DE | Evergreen Waste Services</title>
@@ -71,7 +71,7 @@
   *{box-sizing:border-box;margin:0;padding:0;}
   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:88px;}
   body{background:var(--cream);color:var(--ink);font-family:var(--text);font-size:clamp(1rem,.5vw+.9rem,1.09rem);line-height:1.6;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
-  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut);}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut);padding-left:max(var(--gut),env(safe-area-inset-left));padding-right:max(var(--gut),env(safe-area-inset-right));}
   a{color:inherit;text-decoration:none;}
   h1,h2,h3{font-family:var(--disp);font-weight:700;line-height:1.02;letter-spacing:-.02em;}
   img{max-width:100%;display:block;}
@@ -87,7 +87,7 @@
 
   /* schedule banner */
   .sked{background:var(--lime);color:var(--forest-3);font-weight:600;font-size:.92rem;}
-  .sked .wrap{display:flex;align-items:center;gap:.9rem;padding:.55rem var(--gut);}
+  .sked .wrap{display:flex;align-items:center;gap:.9rem;padding:.55rem var(--gut);padding-left:max(var(--gut),env(safe-area-inset-left));padding-right:max(var(--gut),env(safe-area-inset-right));}
   .sked-text{flex:1;text-align:center;}
   .sked b{font-weight:800;}
   .sked-x{flex:none;background:none;border:none;color:var(--forest-3);font-size:1.3rem;cursor:pointer;opacity:.65;line-height:1;padding:.1rem .25rem;}
