@@ -87,11 +87,10 @@
 
   /* schedule banner */
   .sked{background:var(--lime);color:var(--forest-3);font-weight:600;font-size:.92rem;}
-  .sked .wrap{display:flex;align-items:center;justify-content:center;gap:.6rem;padding:.55rem var(--gut);text-align:center;position:relative;}
-  .sked .dot{width:9px;height:9px;border-radius:50%;background:var(--forest-3);box-shadow:0 0 0 0 rgba(12,36,21,.5);animation:pulse 2.4s var(--ease) infinite;}
-  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(12,36,21,.45);}70%{box-shadow:0 0 0 8px transparent;}100%{box-shadow:0 0 0 0 transparent;}}
+  .sked .wrap{display:flex;align-items:center;gap:.9rem;padding:.55rem var(--gut);}
+  .sked-text{flex:1;text-align:center;}
   .sked b{font-weight:800;}
-  .sked-x{position:absolute;right:var(--gut);background:none;border:none;color:var(--forest-3);font-size:1.1rem;cursor:pointer;opacity:.7;line-height:1;}
+  .sked-x{flex:none;background:none;border:none;color:var(--forest-3);font-size:1.3rem;cursor:pointer;opacity:.65;line-height:1;padding:.1rem .25rem;}
   .sked-x:hover{opacity:1;}
   .sked.hide{display:none;}
 
@@ -254,7 +253,7 @@
   @media (max-width:900px){
     .hero-grid{grid-template-columns:1fr;} .hero-visual{order:-1;max-width:460px;}
     .svc-grid{grid-template-columns:1fr 1fr;} .why-grid{grid-template-columns:1fr 1fr;} .steps{grid-template-columns:1fr;}
-    .nav{display:none;} .call span{display:none;} .nav-toggle{display:inline-flex;}
+    .nav{display:none;} .header-actions{margin-left:auto;} .call span{display:none;} .nav-toggle{display:inline-flex;}
     .header-actions .btn-lime{display:none;}
     .mobile-nav{display:block;background:var(--forest-2);border-bottom:1px solid var(--line-d);}
     .mobile-nav.hide{display:none;}
@@ -264,7 +263,12 @@
   @media (max-width:560px){
     .svc-grid{grid-template-columns:1fr;} .why-grid{grid-template-columns:1fr;}
   }
-  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}.sked .dot{animation:none;}}
+  @media (max-width:600px){
+    #eg{bottom:16px;right:16px;}
+    .eg-panel{position:fixed;inset:0;width:100vw;height:100dvh;max-width:none;max-height:none;border-radius:0;}
+    .eg-form{padding-bottom:calc(.9rem + env(safe-area-inset-bottom));}
+  }
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
 </style>
 </head>
 <body>
@@ -272,9 +276,8 @@
 <!-- SCHEDULE BANNER -->
 <div class="sked" id="sked">
   <div class="wrap">
-    <span class="dot" aria-hidden="true"></span>
-    <span><b>On normal schedule this week</b> — no pickup delays. Ask our assistant anytime if that changes.</span>
-    <button class="sked-x" aria-label="Dismiss" onclick="document.getElementById('sked').classList.add('hide')">&times;</button>
+    <span class="sked-text"><b>On normal schedule this week</b> — no pickup delays. Ask our assistant anytime if that changes.</span>
+    <button class="sked-x" aria-label="Dismiss schedule notice" onclick="document.getElementById('sked').classList.add('hide')">&times;</button>
   </div>
 </div>
 
@@ -287,6 +290,7 @@
       <a href="#why">Why Evergreen</a>
       <a href="#start">How it works</a>
       <a href="#faq">FAQ</a>
+      <a href="account.html">My Account</a>
     </nav>
     <div class="header-actions">
       <a class="call" href="tel:+13026357055"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h2l2 5-2 1a12 12 0 0 0 5 5l1-2 5 2v2a2 2 0 0 1-2 2A16 16 0 0 1 4 5Z"/></svg><span>302-635-7055</span></a>
@@ -301,6 +305,7 @@
     <a href="#why" onclick="document.getElementById('mnav').classList.add('hide')">Why Evergreen</a>
     <a href="#start" onclick="document.getElementById('mnav').classList.add('hide')">How it works</a>
     <a href="#faq" onclick="document.getElementById('mnav').classList.add('hide')">FAQ</a>
+    <a href="account.html">My Account &amp; Billing</a>
     <a class="btn btn-lime" href="#start" onclick="document.getElementById('mnav').classList.add('hide')">Start service</a>
   </div>
 </header>
@@ -439,6 +444,7 @@
       </div>
       <div class="foot-col">
         <h4>Contact</h4>
+        <a href="account.html">My Account &amp; Pay Bill</a>
         <a href="tel:+13026357055">302-635-7055</a>
         <a href="mailto:cs@evergreenws.com">cs@evergreenws.com</a>
         <p>619 Lambson Ln<br>New Castle, DE 19720</p>
