@@ -13,7 +13,7 @@
   var flow = { active: false, step: null, zip: "", plan: "", name: "" };
   var PHONE = '<a href="tel:+13026357055">302-635-7055</a>';
   var MAIL = '<a href="mailto:cs@evergreenws.com">cs@evergreenws.com</a>';
-  var DEFAULT = ["Do you serve my area?", "Start service", "Bin sizes", "Is my trash delayed?"];
+  var DEFAULT = ["Do you serve my area?", "Start service", "Pay my bill", "Is my trash delayed?"];
   var NCC = ["197", "198"]; // New Castle County DE ZIP prefixes
 
   function esc(s){return (s||"").replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
@@ -38,7 +38,7 @@
     fitPanel();
     if(input && isDesktop()) input.focus();   // don't auto-pop the keyboard on mobile — wait for a tap
     if(!started){ started=true;
-      bot("Hi! I'm Evergreen's assistant 🌲 I can check your area, size a bin, **start new service**, or answer billing and schedule questions — day or night. What do you need?");
+      bot("Hi! I'm Evergreen's assistant 🌲 I can check your area, **start new service**, **pay a bill**, or answer schedule and billing questions — day or night. What do you need?");
       chips(DEFAULT);
     }
   };
@@ -49,7 +49,9 @@
     { k:["bin","cart","size","how big","gallon"], a:"We offer a few **cart sizes** for both trash and recycling (green lid = trash, yellow = recycling), so you get the right fit for your home. Need a commercial dumpster or a roll-off? I can size that too.", c:["Start service","Roll-off dumpster","Commercial"] },
     { k:["price","pricing","cost","how much","rate","plan","monthly","quarterly","yearly","pay ahead","afford"], a:"Residential service comes in **flexible plans — monthly, quarterly, or yearly** (paying ahead saves the most). Your exact rate depends on your area and cart size; I can get you a quick quote. Want to start?", c:["Start service","Do you serve my area?"] },
     { k:["holiday","delay","schedule","this week","pickup day","when is","normal schedule"], a:"Good question — holidays can shift pickup by a day. **Right now we're on our normal schedule this week — no delays.** I always keep this current, so ask me anytime “is my trash delayed?”", c:["Start service","Talk to a person"] },
-    { k:["bill","pay","payment","invoice","account","autopay","manage"], a:"You can manage **billing online anytime** and choose monthly, quarterly, or yearly. For anything specific, our billing team is at "+PHONE+" or "+MAIL+".", c:["Start service","Talk to a person"] },
+    { k:["pay my bill","pay bill","pay now","make a payment","pay online","pay it"], a:"Easy — in the real assistant I'd pull up your balance and take the payment right here in chat. In this preview you can see the whole flow on your **<a href=\"account.html\">account page</a>**: balance, autopay, and pay-now in a couple of taps.", c:["Set up autopay","Do you serve my area?","Talk to a person"] },
+    { k:["autopay","auto pay","automatic payment","set up autopay"], a:"Autopay keeps your bill paid on time, every time — no logging in, no late fees. Flip it on from your **<a href=\"account.html\">account page</a>** in one tap.", c:["Pay my bill","Talk to a person"] },
+    { k:["bill","billing","payment","invoice","account","manage","balance"], a:"You can handle **billing online anytime** — your **<a href=\"account.html\">account page</a>** shows your balance, autopay, and payment history, and you can just tell me **\"pay my bill\"** right here. Plans come monthly, quarterly, or yearly. Prefer a person? Billing is at "+PHONE+" or "+MAIL+".", c:["Pay my bill","Set up autopay","Talk to a person"] },
     { k:["commercial","business","store","restaurant","office","front load","front-load"], a:"For businesses we run **front-load dumpster service** sized to your volume — clean, reliable, eco-friendly. Tell me your business type and I'll point you the right way, or start a commercial quote.", c:["Get a quote","Do you serve my area?"] },
     { k:["roll","roll-off","rolloff","dumpster","remodel","construction","project","cleanout"], a:"**Roll-off dumpsters** are perfect for remodels and big cleanouts — several sizes to fit the job and your driveway. What's the project? I'll suggest a size.", c:["Start service","Talk to a person"] },
     { k:["junk","haul","removal","furniture","appliance","get rid"], a:"Our **junk removal** team does the heavy lifting — you point, we haul. Great for cleanouts and single big items. Want a quote?", c:["Book a haul","Bulk & metal"] },
